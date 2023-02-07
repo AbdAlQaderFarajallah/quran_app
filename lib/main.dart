@@ -135,59 +135,49 @@ class _MyHomePageState extends State<MyHomePage> {
                       return Center(
                         child: Padding(
                           padding: const EdgeInsets.all(4),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              RichText(
-                                overflow: TextOverflow.visible,
-                                textAlign: TextAlign.center,
-                                locale: context.locale,
-                                text: TextSpan(
-                                    text: '',
-                                    recognizer: DoubleTapGestureRecognizer()
-                                      ..onDoubleTap = () {
-                                        setState(() {});
-                                      },
-                                    style: const TextStyle(
-                                      fontFamily: 'HafsSmart',
-                                      color: Colors.black,
-                                      fontSize: 19,
-                                      textBaseline: TextBaseline.alphabetic,
-                                    ),
-                                    children: [
-                                      for (int i = 0; i < data.length; i++) ...{
-                                        TextSpan(
-                                          text: '${data[i]['text']}',
-                                        ),
-                                        WidgetSpan(
-                                          baseline: TextBaseline.alphabetic,
-                                          child: Container(
-                                            padding: const EdgeInsets.all(8),
-                                            margin: const EdgeInsets.symmetric(
-                                                horizontal: 4, vertical: 6),
-                                            decoration: BoxDecoration(
-                                              image: const DecorationImage(
-                                                opacity: 1,
-                                                image: AssetImage(
-                                                  'images/end.png',
-                                                ),
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                            ),
-                                            child: Text(
-                                                '${data[i]['numberInSurah']}'),
-                                          ),
-                                        ),
-                                      }
-                                    ]),
-                              ),
-                              Text(
-                                currentPage.toString(),
+                          child: RichText(
+                            overflow: TextOverflow.visible,
+                            textAlign: TextAlign.center,
+                            locale: context.locale,
+                            text: TextSpan(
+                                text: '',
+                                recognizer: DoubleTapGestureRecognizer()
+                                  ..onDoubleTap = () {
+                                    setState(() {});
+                                  },
                                 style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                                  fontFamily: 'HafsSmart',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  textBaseline: TextBaseline.alphabetic,
+                                ),
+                                children: [
+                                  for (int i = 0; i < data.length; i++) ...{
+                                    TextSpan(
+                                      text: '${data[i]['text']}',
+                                    ),
+                                    WidgetSpan(
+                                      baseline: TextBaseline.alphabetic,
+                                      child: Container(
+                                        padding: const EdgeInsets.all(8),
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 4, vertical: 6),
+                                        decoration: BoxDecoration(
+                                          image: const DecorationImage(
+                                            opacity: 1,
+                                            image: AssetImage(
+                                              'images/end.png',
+                                            ),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Text(
+                                            '${data[i]['numberInSurah']}'),
+                                      ),
+                                    ),
+                                  }
+                                ]),
                           ),
                         ),
                       );
